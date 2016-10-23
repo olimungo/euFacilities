@@ -1,0 +1,9 @@
+.jumbotron h1 {
+  font-size: 30px;
+}
+
+.jumbotron .technologies {
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: #666;
+}
