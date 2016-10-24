@@ -10,6 +10,7 @@ import { routing, appRoutingProviders } from './app.routing';
 import { Home } from './pages/home/home.component';
 import { Users } from './pages/users/users.component';
 import { Roles } from './pages/roles/roles.component';
+import { Login } from './pages/login/login.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAEvFr-a3certr2Lq6hzgXtu1hC4so1em0",
@@ -30,7 +31,8 @@ export const firebaseConfig = {
     AppComponent,
     Home,
     Users,
-    Roles
+    Roles,
+    Login
   ],
   providers: [
     appRoutingProviders
