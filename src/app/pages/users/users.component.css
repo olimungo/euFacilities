@@ -1,0 +1,10 @@
+.users .hidden {
+  visibility: hidden;
+}
+.users button {
+  margin-bottom: 10px;
+}
+
+.users li {
+  cursor: pointer;
+}

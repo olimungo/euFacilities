@@ -8,6 +8,9 @@
     "removeComments": false,
     "sourceMap": true,
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "types": [
+      "firebase"
+    ]
   }
 }
