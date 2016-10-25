@@ -9,8 +9,10 @@ import { routing, appRoutingProviders } from './app.routing';
 
 import { Home } from './pages/home/home.component';
 import { Users } from './pages/users/users.component';
-import { Roles } from './pages/roles/roles.component';
-import { Login } from './pages/login/login.component';
+import { LogIn } from './pages/log-in/log-in.component';
+import { SignIn } from './pages/sign-in/sign-in.component';
+
+import { Guardian } from './core/guardian/guardian.service';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAEvFr-a3certr2Lq6hzgXtu1hC4so1em0",
@@ -31,11 +33,12 @@ export const firebaseConfig = {
     AppComponent,
     Home,
     Users,
-    Roles,
-    Login
+    LogIn,
+    SignIn
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    Guardian
   ],
   bootstrap: [ AppComponent ]
 })

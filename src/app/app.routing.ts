@@ -2,15 +2,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { Home } from './pages/home/home.component';
 import { Users } from './pages/users/users.component';
-import { Roles } from './pages/roles/roles.component';
-import { Login } from './pages/login/login.component';
+import { LogIn } from './pages/log-in/log-in.component';
+import { SignIn } from './pages/sign-in/sign-in.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: Home },
   { path: 'users', component: Users },
-  { path: 'roles', component: Roles },
-  { path: 'login', component: Login }
+  { path: 'log-in', component: LogIn },
+  { path: 'sign-in', component: SignIn }
 ];
 
 export const appRoutingProviders: any[] = [

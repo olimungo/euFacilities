@@ -1,0 +1,8 @@
+.log-in .message {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 50px;
+  color: #6192f3;
+  font-weight: 100;
+}

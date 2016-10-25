@@ -1,6 +1,8 @@
 {
-  "rules": {
-    ".read": true,
-    ".write": true
+  "rules": {    
+    "users": {
+      ".read": "root.child('users/'+auth.uid).child('role').val() === 'ADMIN'",
+      ".write": "root.child('users/'+auth.uid).child('role').val() === 'ADMIN'"
+    }
   }
 }
