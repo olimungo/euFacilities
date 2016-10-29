@@ -1,0 +1,13 @@
+.buildings .top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.buildings .top-bar .group {
+  width: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

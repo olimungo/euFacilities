@@ -11,7 +11,3 @@ import 'rxjs';
 
 // Other vendors
 import 'font-awesome';
-import 'bootstrapCss';
-import 'jquery';
-import 'bootstrapJs';
-import 'faker';

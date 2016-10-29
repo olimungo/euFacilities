@@ -7,19 +7,22 @@ import { AngularFireModule } from 'angularfire2';
 import { AppComponent } from './app.component';
 import { routing, appRoutingProviders } from './app.routing';
 
-import { Home } from './pages/home/home.component';
-import { Users } from './pages/users/users.component';
-import { LogIn } from './pages/log-in/log-in.component';
-import { SignIn } from './pages/sign-in/sign-in.component';
+import { Buildings } from './pages/buildings/buildings.component';
+import { Card } from './pages/buildings/card/card.component';
+import { Detail } from './pages/buildings/detail/detail.component';
+import { List } from './pages/buildings/list/list.component';
+import { Map } from './pages/buildings/map/map.component';
+import { SearchBox } from './pages/buildings/search-box/search-box.component';
+import { ViewMode } from './pages/buildings/view-mode/view-mode.component';
 
-import { Guardian } from './core/guardian/guardian.service';
+import { SearchBoxFilter } from './pages/buildings/search-box/search-box-filter.pipe';
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyAEvFr-a3certr2Lq6hzgXtu1hC4so1em0",
-  authDomain: "angular2-seed-32f06.firebaseapp.com",
-  databaseURL: "https://angular2-seed-32f06.firebaseio.com",
-  storageBucket: "angular2-seed-32f06.appspot.com",
-  messagingSenderId: "922996335222"
+  apiKey: "AIzaSyDopxRQn9tQsmNJtgIDgF0pnZVIe7RYDwI",
+  authDomain: "eufacilities-b12f4.firebaseapp.com",
+  databaseURL: "https://eufacilities-b12f4.firebaseio.com",
+  storageBucket: "eufacilities-b12f4.appspot.com",
+  messagingSenderId: "253643200465"
 };
 
 @NgModule({
@@ -31,14 +34,17 @@ export const firebaseConfig = {
   ],
   declarations: [
     AppComponent,
-    Home,
-    Users,
-    LogIn,
-    SignIn
+    Buildings,
+    Card,
+    Detail,
+    List,
+    Map,
+    SearchBox,
+    ViewMode,
+    SearchBoxFilter
   ],
   providers: [
-    appRoutingProviders,
-    Guardian
+    appRoutingProviders
   ],
   bootstrap: [ AppComponent ]
 })

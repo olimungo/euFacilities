@@ -1,0 +1,10 @@
+<div class="card" *ngIf="building.name">
+  <div class="name">
+    <div class="label">{{ building.name }}</div>
+    <div class="code">{{ building.code }}</div>
+  </div>
+
+  <div class="address">{{ building.buildingAddress.streetAddress }}</div>
+  <div class="locality">{{ building.buildingAddress.postalCode ? building.buildingAddress.postalCode + ' ' : '' }}{{ building.buildingAddress.city }}</div>
+  <div class="country">{{ building.buildingAddress.country }}</div>
+</div>

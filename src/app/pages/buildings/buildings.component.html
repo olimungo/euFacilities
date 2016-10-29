@@ -1,4 +1,18 @@
-<div class="users">
+<div class="buildings">
+  <div class="top-bar">
+    <div class="group"></div>
+
+    <search-box class="group" [(filter)]="filter"></search-box>
+
+    <view-mode class="group" [mode]="viewMode" (modeChanged)="modeChanged($event)"></view-mode>
+  </div>
+</div>
+
+<list class="cards" [buildings]="buildings" [filter]="filter" *ngIf="viewMode === 'LIST'"></list>
+
+<map *ngIf="viewMode === 'MAP'"></map>
+
+<!--div class="users">
     <div [class.hidden]="isEditMode">
       <button class="btn btn-primary" (click)="add()">Add</button>
 
@@ -44,4 +58,4 @@
         </div>
       </form>
     </div>
-</div>
+</div-->
