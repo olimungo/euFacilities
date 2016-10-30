@@ -1,10 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChange } from '@angular/core';
 
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import { IBuilding } from '../../core/entities/building/building.interface';
-
-const USERS_COUNT = 15;
 
 @Component({
   selector: 'buildings',
@@ -12,14 +10,12 @@ const USERS_COUNT = 15;
   styleUrls: [ 'buildings.component.css' ]
 })
 export class Buildings {
-  isDetailMode: boolean = false;
   buildings: IBuilding[];
   currentBuilding: IBuilding = {};
-  canChangeRole: boolean = false;
-
   viewMode = 'MAP';
+  isDetailVisible: boolean = false;
 
-  filter: string;
+  private _buildings: IBuilding[];
 
   constructor(private af: AngularFire) {
     af.database.list('/buildings', {
@@ -27,15 +23,18 @@ export class Buildings {
         orderByChild: 'name'
       }
     }).subscribe(result => {
-      this.buildings = result.map(fbBuilding => {
+      this._buildings = result.map(fbBuilding => {
         return {
           $key: fbBuilding.$key,
           name: fbBuilding.name,
           code: fbBuilding.code,
           buildingAddress: fbBuilding.buildingAddress,
-          type: fbBuilding.type
+          type: fbBuilding.type,
+          gpsCoordinates: fbBuilding.gpsCoordinates
         }
       });
+
+      this.buildings = this._buildings.map(building => building);
     });
   }
 
@@ -43,13 +42,23 @@ export class Buildings {
     this.viewMode = mode;
   }
 
-  private details(user: IBuilding) {
-    this.currentBuilding.buildingAddress = user.buildingAddress;
-
-    this.isDetailMode = true;
+  private showDetail(building: IBuilding) {
+    this.currentBuilding = building;
+    this.isDetailVisible = true;
   }
 
-  private close() {
-    this.isDetailMode = false;
+  private closeDetail() {
+    this.isDetailVisible = false;
+  }
+
+  private doFilter(pattern: string) {
+    this._buildings = this._buildings ? this._buildings : [];
+    pattern = pattern ? pattern : '';
+
+    let filtered =  this._buildings.filter(building => {
+      return building.code.toUpperCase().indexOf(pattern.toUpperCase()) > -1;
+    });
+
+    this.buildings = pattern ? filtered : this._buildings;
   }
 }

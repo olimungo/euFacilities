@@ -15,8 +15,6 @@ import { Map } from './pages/buildings/map/map.component';
 import { SearchBox } from './pages/buildings/search-box/search-box.component';
 import { ViewMode } from './pages/buildings/view-mode/view-mode.component';
 
-import { SearchBoxFilter } from './pages/buildings/search-box/search-box-filter.pipe';
-
 export const firebaseConfig = {
   apiKey: "AIzaSyDopxRQn9tQsmNJtgIDgF0pnZVIe7RYDwI",
   authDomain: "eufacilities-b12f4.firebaseapp.com",
@@ -40,8 +38,7 @@ export const firebaseConfig = {
     List,
     Map,
     SearchBox,
-    ViewMode,
-    SearchBoxFilter
+    ViewMode
   ],
   providers: [
     appRoutingProviders

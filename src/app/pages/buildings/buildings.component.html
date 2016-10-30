@@ -2,15 +2,17 @@
   <div class="top-bar">
     <div class="group"></div>
 
-    <search-box class="group" [(filter)]="filter"></search-box>
+    <search-box class="group" (filterChange)="doFilter($event)"></search-box>
 
     <view-mode class="group" [mode]="viewMode" (modeChanged)="modeChanged($event)"></view-mode>
   </div>
+
+  <list class="cards" [buildings]="buildings" (selectBuilding)="showDetail($event)" *ngIf="viewMode === 'LIST'"></list>
+
+  <map [buildings]="buildings" *ngIf="viewMode === 'MAP'"></map>
 </div>
 
-<list class="cards" [buildings]="buildings" [filter]="filter" *ngIf="viewMode === 'LIST'"></list>
-
-<map *ngIf="viewMode === 'MAP'"></map>
+<!--detail [building]="currentBuilding" [class.visible]="isDetailVisible" (close)="closeDetail()"></detail-->
 
 <!--div class="users">
     <div [class.hidden]="isEditMode">

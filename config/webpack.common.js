@@ -14,10 +14,7 @@ module.exports = {
     extensions: ['', '.js', '.ts'],
     alias: {
       'font-awesome': 'font-awesome/css/font-awesome.min.css',
-      'faker': 'faker/build/build/faker.min.js',
-      "jquery": "jquery/dist/jquery.min.js",
-      "bootstrapCss": "bootstrap/dist/css/bootstrap.min.css",
-      "bootstrapJs": "bootstrap/dist/js/bootstrap.min.js"
+      'infobox': 'google-maps-utility-library-v3-infobox/dist/infobox.min.js',
     }
   },
 
@@ -30,9 +27,7 @@ module.exports = {
       { test: /\.css$/, include: helpers.root('src', 'app'), loader: 'raw' },
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
       { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
-      { test: /faker\.min\.js$/, loader: 'script' },
-      { test: /jquery.min\.js$/, loader: "script" },
-      { test: /bootstrapJs\.js$/, loader: 'imports?jQuery=jquery,$=jquery' },
+      { test: /infobox\.min\.js$/, loader: 'script' }
     ]
   },
 

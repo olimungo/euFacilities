@@ -1,5 +1,5 @@
 <div class="list">
-  <div *ngFor="let building of buildings | SearchBoxFilter:filter" (click)="details(building)">
-    <card [building]="building"></card>
+  <div *ngFor="let building of buildings">
+    <card [building]="building" (click)="select(building)"></card>
   </div>
 </div>

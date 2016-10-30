@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { IBuilding } from '../../../core/entities/building/building.interface';
 
@@ -9,5 +9,9 @@ import { IBuilding } from '../../../core/entities/building/building.interface';
 })
 export class List {
   @Input() buildings: IBuilding;
-  @Input() filter: string;
+  @Output() selectBuilding: EventEmitter<IBuilding> = new EventEmitter<IBuilding>();
+
+  select(building: IBuilding) {
+    this.selectBuilding.emit(building);
+  }
 }

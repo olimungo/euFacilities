@@ -11,4 +11,10 @@ export interface IBuildingAddress {
   country?: string,
   postalCode?: string,
   streetAddress?: string
+  gpsCoordinates: IGpsCoordinates
+}
+
+export interface IGpsCoordinates {
+  latitude: number,
+  longitude: number
 }

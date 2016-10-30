@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+import { IBuilding } from '../../../core/entities/building/building.interface';
 
 @Component({
   selector: 'detail',
@@ -6,4 +8,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: [ 'detail.component.css' ]
 })
 export class Detail {
+  @Input() building: IBuilding;
+  @Output() close: EventEmitter<any> = new EventEmitter<any>();
+
+  private closeClicked() {
+    this.close.emit();
+  }
 }

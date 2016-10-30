@@ -1,14 +1,22 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 body {
   font-family: Verdana;
   font-size: .75em;
   background: #eee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-app {
-  width: 900px;
+app, buildings, map, list, detail {
+  height: 100%;
+}
+
+map {
+  overflow: hidden;
 }
 
 @media screen and (max-width: 400px) {

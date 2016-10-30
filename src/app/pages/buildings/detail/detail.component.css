@@ -1,40 +1,98 @@
-.card {
-  background: #fff;
-  padding: 1em;
-  margin: 1em;
-  width: 20em;
-  box-shadow: 0 -1px 0 #e0e0e0,0 0 2px rgba(0,0,0,.12),0 2px 1px rgba(0,0,0,.24);
-  border-radius: 1px; 
+.detail {
+  color: #999;
+  background-color: #FFF;
+  width: 100%;
+  height: 100%;
+}
+
+.detail form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.detail.visible {
+  top: 0;
+}
+
+.detail .panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 10px 25px;
+  font-weight: 500;
+  font-size: 18px;
+  background: #4285f4;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+  z-index: 10;
+}
+
+.detail .panel-header .title {
+  display: flex;
+  align-items: center;
+}
+
+.detail .panel-header .title .code {
+  padding: .3em .5em;
+  background: #1e4a94;
+  border-radius: 4px;
+  font-size: .7em;
+  margin-left: 2em;
+}
+
+.detail .panel-header a {
+  border: none;
+  background: none;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 2px;
   cursor: pointer;
 }
 
-.card:hover {
-  background: #eee;
+.detail .panel-header a:hover {
+  background: #356ac3;
 }
 
-.card .name {
-  color: #1e9ddc;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1em;
+.detail .panel-header a:active {
+  background: #224c92;
+  outline: none;
 }
 
-.card .name .label {
-  font-size: 1.1em;
-  color: #888;
-  width: 15em;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.detail .panel-header .title {
+  text-transform: uppercase;
 }
 
-.card .name .code {
-  font-size: .9em;
+.detail .panel-header .action {
+  font-size: 16px;
+  font-weight: 400;
 }
 
-.card .country {
-  font-weight: bold;
-  margin-top: .8em;
+.detail .panel-header .close {
+  margin-left: 40px;
+}
+
+.detail .content .facilities {
+  background: #ffb74d;
+  padding: 20px;
+}
+
+.detail .content .facilities a {
+  border: none;
+  background: none;
+  padding: 10px 15px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 2em;
+  color: whitesmoke;
+  margin: 5px;
+}
+
+.detail .content .facilities a:hover {
+  background: #d6993f;
+}
+
+.detail .content .facilities a:active {
+  background: #a5752f;
+  outline: none;
 }

@@ -11,3 +11,4 @@ import 'rxjs';
 
 // Other vendors
 import 'font-awesome';
+import 'infobox';
