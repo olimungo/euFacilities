@@ -1,0 +1,46 @@
+.building {
+  padding: 3em;
+  font-size: 1.5em;
+  color: #666;
+}
+
+.building .separator {
+  border-bottom: solid 1px #ddd;
+  margin: 1.5em 0;
+}
+
+.building .time {
+  display: flex;
+  align-items: center;
+}
+
+.building .fa {
+  font-size: 2em;
+  width: 2em;
+}
+
+.building .time .start-time {
+  margin-right: 1em;
+}
+
+.building .time .end-time {
+  margin-left: 1em;
+}
+
+.building .country {
+  margin-top: .4em;
+  font-weight: 600;
+}
+
+.building .occupants-box {
+  display: flex;
+  align-items: center;
+}
+
+.building .occupants-box .occupants {
+  padding: .3em .5em;
+  margin-right: .3em;
+  color: #fff;
+  background: #4285f4;
+  border-radius: 4px;
+}

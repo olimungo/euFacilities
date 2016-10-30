@@ -26,20 +26,20 @@
   align-items: center;
 }
 
-.buildings detail {
-  position: absolute;
-  top: 1000px;
+detail {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 100em;
   left: 0;
-  z-index: 2;
+  z-index: 999;
   width: 100%;
-  height: 100%;
-  visibility: hidden;
+  /*height: 100%;*/
   transition-property: all;
   transition-duration: .7s;
   transition-timing-function: cubic-bezier(.3, 1, .3, 1);
 }
 
-.buildings detail.visible {
-  visibility: visible;
+detail.visible {
   top: 0;
 }

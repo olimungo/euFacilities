@@ -1,0 +1,45 @@
+.facilities-view-mode {
+  font-size: 2.5em;
+  display: flex;
+  width: 100%;
+  padding-right: 2em;
+  background: #ffb74d;
+  padding: .4em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.facilities-view-mode .actions {
+  display: flex;
+}
+
+.facilities-view-mode .fa-map {
+  margin-right: 1em;
+}
+
+.facilities-view-mode .fa {
+  font-size: 1.2em;
+  padding: .3em;
+  border-radius: 3px;
+  width: 1em;
+  height: 1em;
+  color: #fff;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: .5em;
+}
+
+.facilities-view-mode .fa.active {
+  background: #fbd192;
+}
+
+.facilities-view-mode .fa:hover {
+  background: #ffc671;
+}
+
+.facilities-view-mode .fa:active {
+  background: #ea9e2d;
+}

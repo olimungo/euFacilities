@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { IBuilding } from '../../../core/entities/building/building.interface';
 
@@ -17,8 +17,9 @@ export class Map {
 
     setTimeout(() => {
       this.updateMarkers();
-    }, 1000);
+    }, 500);
   }
+  @Output() selectBuilding: EventEmitter<IBuilding> = new EventEmitter<IBuilding>();
 
   private _buildings: IBuilding[];
   private markers: any = [];
@@ -49,19 +50,22 @@ export class Map {
     if (this._buildings) {
       this._buildings.map((building: IBuilding) => {
         if (building.buildingAddress.gpsCoordinates) {
-          let position = { lat: building.buildingAddress.gpsCoordinates.latitude, lng: building.buildingAddress.gpsCoordinates.longitude };
-          
-          this.addMarker(position);
-          this.addBox(position, building.code);
+          this.addMarker(building);
+          this.addBox(building);
         }
       });
     }
   }  
 
-  addMarker(location: any) {
-    var marker = new google.maps.Marker({
-      position: location,
+  addMarker(building: IBuilding) {
+    let marker = new google.maps.Marker({
+      position: { lat: building.buildingAddress.gpsCoordinates.latitude, lng: building.buildingAddress.gpsCoordinates.longitude },
       map: this.map
+    });
+
+    marker.addListener('click', () => {
+      console.log('click')
+      this.selectBuilding.emit(building);
     });
 
     this.markers.push(marker);
@@ -75,9 +79,9 @@ export class Map {
     this.infoboxes = [];
   }
 
-  addBox(position: any, label: string) {
+  addBox(building: IBuilding) {
     let options = {
-      content: label,
+      content: building.code,
       boxStyle: {
         border: '1px solid rgba(98, 141, 185, .5)',
         textAlign: 'center',
@@ -89,7 +93,7 @@ export class Map {
       },
       disableAutoPan: true,
       pixelOffset: new google.maps.Size(-25, 0),
-      position: new google.maps.LatLng(position.lat, position.lng),
+      position: new google.maps.LatLng(building.buildingAddress.gpsCoordinates.latitude, building.buildingAddress.gpsCoordinates.longitude),
       closeBoxURL: '',
       isHidden: false,
       pane: 'mapPane',

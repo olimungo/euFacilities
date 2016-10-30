@@ -1,0 +1,11 @@
+<div class="facilities-view-mode">
+    <div class="actions">
+      <a><i class="fa fa-building" [class.active]="mode === 'BUILDING'" (click)="setViewMode('BUILDING')"></i></a>
+      <a><i class="fa fa-product-hunt" [class.active]="mode === 'PARKING'" (click)="setViewMode('PARKING')"></i></a>
+      <a><i class="fa fa-bicycle" [class.active]="mode === 'BICYCLE'" (click)="setViewMode('BICYCLE')"></i></a>
+      <a><i class="fa fa-cutlery" [class.active]="mode === 'CANTEEN'" (click)="setViewMode('CANTEEN')"></i></a>
+      <a><i class="fa fa-coffee" [class.active]="mode === 'CAFETERIA'" (click)="setViewMode('CAFETERIA')"></i></a>
+    </div>
+
+    <a><i class="fa fa-map"></i></a>  
+</div>

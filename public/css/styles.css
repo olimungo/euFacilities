@@ -17,6 +17,7 @@ app, buildings, map, list, detail {
 
 map {
   overflow: hidden;
+  max-height: 1000px;
 }
 
 @media screen and (max-width: 400px) {

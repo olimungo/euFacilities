@@ -25,7 +25,7 @@
   font-size: 18px;
   background: #4285f4;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.2),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
-  z-index: 10;
+  position: relative;
 }
 
 .detail .panel-header .title {
@@ -63,36 +63,17 @@
   text-transform: uppercase;
 }
 
-.detail .panel-header .action {
-  font-size: 16px;
-  font-weight: 400;
-}
-
 .detail .panel-header .close {
   margin-left: 40px;
 }
 
-.detail .content .facilities {
-  background: #ffb74d;
-  padding: 20px;
-}
-
-.detail .content .facilities a {
-  border: none;
-  background: none;
-  padding: 10px 15px;
-  border-radius: 2px;
-  cursor: pointer;
-  font-size: 2em;
-  color: whitesmoke;
-  margin: 5px;
-}
-
-.detail .content .facilities a:hover {
-  background: #d6993f;
-}
-
-.detail .content .facilities a:active {
-  background: #a5752f;
-  outline: none;
+.detail .photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 3em;
+  background: #ddd;
+  width: 100%;
+  height: 10em;
 }

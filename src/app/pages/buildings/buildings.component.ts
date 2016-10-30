@@ -10,9 +10,9 @@ import { IBuilding } from '../../core/entities/building/building.interface';
   styleUrls: [ 'buildings.component.css' ]
 })
 export class Buildings {
-  buildings: IBuilding[];
-  currentBuilding: IBuilding = {};
-  viewMode = 'MAP';
+  buildings: IBuilding[] = [];
+  currentBuilding: IBuilding;
+  viewMode = 'LIST';
   isDetailVisible: boolean = false;
 
   private _buildings: IBuilding[];
@@ -23,18 +23,22 @@ export class Buildings {
         orderByChild: 'name'
       }
     }).subscribe(result => {
-      this._buildings = result.map(fbBuilding => {
+      this._buildings = result.map(curBuilding => {
         return {
-          $key: fbBuilding.$key,
-          name: fbBuilding.name,
-          code: fbBuilding.code,
-          buildingAddress: fbBuilding.buildingAddress,
-          type: fbBuilding.type,
-          gpsCoordinates: fbBuilding.gpsCoordinates
+          $key: curBuilding.$key,
+          name: curBuilding.name,
+          code: curBuilding.code,
+          buildingAddress: curBuilding.buildingAddress,
+          type: curBuilding.type,
+          gpsCoordinates: curBuilding.gpsCoordinates,
+          occupants: curBuilding.occupants,
+          buildingOpeningHoursList: curBuilding.buildingOpeningHoursList
         }
-      });
+      }).filter((curBuilding: IBuilding) => curBuilding.name );
 
       this.buildings = this._buildings.map(building => building);
+
+      console.log(result)
     });
   }
 
@@ -45,6 +49,8 @@ export class Buildings {
   private showDetail(building: IBuilding) {
     this.currentBuilding = building;
     this.isDetailVisible = true;
+
+    console.log(this.currentBuilding)
   }
 
   private closeDetail() {

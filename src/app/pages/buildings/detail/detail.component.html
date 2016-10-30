@@ -1,24 +1,24 @@
-<div class="detail">
-  <form name="form" novalidate>
-    <div class="panel-header" layout="row" layout-align="space-between center">
-      <div class="title">
-          <div class="name">{{ building.name }}</div>
-          <div class="code">{{ building.code }}</div>
-      </div>
-
-        <a id="close" class="action close" (click)="closeClicked()">Close</a>
+<div class="detail" *ngIf="_building">
+  <div class="panel-header">
+    <div class="title">
+        <div class="name">{{ _building.name }}</div>
+        <div class="code">{{ _building.code }}</div>
     </div>
 
-    <div class="content">
-      <div id="map"></div>
-      
-      <div class="facilities">
-        <a><i class="fa fa-building"></i></a>
-        <a><i class="fa fa-product-hunt"></i></a>
-        <a><i class="fa fa-bicycle"></i></a>
-        <a><i class="fa fa-cutlery"></i></a>
-        <a><i class="fa fa-coffee"></i></a>
-      </div>
-    </div>
-  </form>
+      <a id="close" class="action close" (click)="closeClicked()">Close</a>
+  </div>
+
+  <div class="photo">
+    PICTURE
+  </div>
+
+  <facilities-view-mode (modeChanged)="modeChanged($event)"></facilities-view-mode>
+
+  <div class="content">
+    <building [building]="_building" *ngIf="facilitiesViewMode === 'BUILDING'"></building>
+    <parking [building]="_building" *ngIf="facilitiesViewMode === 'PARKING'"></parking>
+    <bicycle [building]="_building" *ngIf="facilitiesViewMode === 'BICYCLE'"></bicycle>
+    <canteen [building]="_building" *ngIf="facilitiesViewMode === 'CANTEEN'"></canteen>
+    <cafeteria [building]="_building" *ngIf="facilitiesViewMode === 'CAFETERIA'"></cafeteria>
+  </div>
 </div>

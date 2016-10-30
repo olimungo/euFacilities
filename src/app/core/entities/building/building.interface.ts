@@ -3,7 +3,9 @@ export interface IBuilding {
   buildingAddress?: IBuildingAddress,
   code?: string,
   name?: string,
-  type?: 'OFFICES' | 'PARKING'
+  type?: 'OFFICES' | 'PARKING',
+  occupants?: string,
+  buildingOpeningHoursList?: IBuildingOpeningHoursList
 }
 
 export interface IBuildingAddress {
@@ -11,10 +13,24 @@ export interface IBuildingAddress {
   country?: string,
   postalCode?: string,
   streetAddress?: string
-  gpsCoordinates: IGpsCoordinates
+  gpsCoordinates?: IGpsCoordinates
 }
 
 export interface IGpsCoordinates {
-  latitude: number,
-  longitude: number
+  latitude?: number,
+  longitude?: number
+}
+
+export interface IBuildingOpeningHoursList {
+  openingHours?: any
+}
+
+export interface IOpeningHours {
+  daysOfWeek?: any,
+  startTime?: string,
+  endTime?: string
+}
+
+export interface IDaysOfWeek {
+
 }

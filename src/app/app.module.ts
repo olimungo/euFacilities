@@ -14,6 +14,12 @@ import { List } from './pages/buildings/list/list.component';
 import { Map } from './pages/buildings/map/map.component';
 import { SearchBox } from './pages/buildings/search-box/search-box.component';
 import { ViewMode } from './pages/buildings/view-mode/view-mode.component';
+import { Building } from './pages/buildings/detail//building/building.component';
+import { Parking } from './pages/buildings/detail//parking/parking.component';
+import { Bicycle } from './pages/buildings/detail//bicycle/bicycle.component';
+import { Canteen } from './pages/buildings/detail//canteen/canteen.component';
+import { Cafeteria } from './pages/buildings/detail//cafeteria/cafeteria.component';
+import { FacilitiesViewMode } from './pages/buildings/detail//facilities-view-mode/facilities-view-mode.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDopxRQn9tQsmNJtgIDgF0pnZVIe7RYDwI",
@@ -38,7 +44,13 @@ export const firebaseConfig = {
     List,
     Map,
     SearchBox,
-    ViewMode
+    ViewMode,
+    Building,
+    Parking,
+    FacilitiesViewMode,
+    Bicycle,
+    Canteen,
+    Cafeteria
   ],
   providers: [
     appRoutingProviders

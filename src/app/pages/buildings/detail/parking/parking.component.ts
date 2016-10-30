@@ -1,13 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
-import { IBuilding } from '../../../core/entities/building/building.interface';
+import { IBuilding } from '../../../../core/entities/building/building.interface';
 
 @Component({
-  selector: 'detail',
-  templateUrl: 'detail.component.html',
-  styleUrls: [ 'detail.component.css' ]
+  selector: 'parking',
+  templateUrl: 'parking.component.html',
+  styleUrls: [ 'parking.component.css' ]
 })
-export class Detail {
+export class Parking {
   @Input() set building(value: IBuilding) {
     this._building = value;
 
@@ -30,20 +30,8 @@ export class Detail {
     }
   }
 
-  @Output() close: EventEmitter<any> = new EventEmitter<any>();
-
-  private facilitiesViewMode: string = 'BUILDING';
-
   private _building: IBuilding;
   private startTime: string = '';
   private endTime: string = '';
   private occupants: string[];
-
-  private closeClicked() {
-    this.close.emit();
-  }
-
-  private modeChanged(mode: string) {
-    this.facilitiesViewMode = mode;
-  }
 }
